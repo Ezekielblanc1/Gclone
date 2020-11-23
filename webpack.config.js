@@ -36,22 +36,4 @@ module.exports = {
         }
     })
 ],
-  // plugins: [
-  //   new InlineEnvironmentVariablesPlugin({token: 'token'})
-  // ],
-  //   plugins: [
-  //     new webpack.DefinePlugin( {
-  //       "process.env": dotenv
-  //     } ),
-  //     new UglifyJsPlugin({
-  //       "uglifyOptions":
-  //           {
-  //               compress: {
-  //                   warnings: false
-  //               },
-  //               sourceMap: true
-  //           }
-  //   }
-  // ),
-  //   ],
 };
