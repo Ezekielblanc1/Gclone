@@ -1,10 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
+const InlineEnvironmentVariablesPlugin = require("inline-environment-variables-webpack-plugin");
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const dotenv = require('dotenv').config( {
   path: path.join(__dirname, '.env')
 } );
 
+console.log(dotenv, "dotenv")
 
 module.exports = {
   entry: {
@@ -30,7 +32,7 @@ module.exports = {
     new webpack.DefinePlugin({
         'process.env': {
             'NODE_ENV': JSON.stringify('development'),
-            'token': process.env.NODE_ENV === "development" ? "98d361c45bb1b0030dbe42684a781edc618f18ed": JSON.stringify(process.env.token)
+            'token': JSON.stringify(dotenv.parsed.token)
         }
     })
 ],
